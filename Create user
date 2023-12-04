@@ -1,0 +1,11 @@
+base_url = "https://practice.expandtesting.com/notes/api"
+name = "Serafym2"
+email = "user127@gmail.com"
+password = "user127!"
+
+data = {"name":name,"email":email,"password":password}
+response = requests.post(base_url+"/users/register", data=data)
+print(response.status_code, response.json())
+
+userId = response.json()["data"]["id"]
+print(userId)
