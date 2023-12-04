@@ -1,0 +1,12 @@
+import requests
+
+base_url = "https://practice.expandtesting.com/notes/api"
+name = "Serafym2"
+email = "user127@gmail.com"
+password = "user127!"
+
+data = {"email": email, "password": password}
+response = requests.post(base_url+"/users/login", data=data)
+userToken = response.json()["data"]["token"]
+print(userToken)
+headers = {'X-Auth-Token': userToken}
